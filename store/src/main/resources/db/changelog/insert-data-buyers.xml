@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="03" author="alex">
+        <comment>Inserting Buyers</comment>
+        <insert tableName="buyers">
+            <column name="surname" value="Ivanov"/>
+            <column name="firstname" value="Ivan"/>
+            <column name="lastname" value="Ivanovich"/>
+            <column name="phone" value="89053679014"/>
+            <column name="address" value="Moscow, Aviamotornaya street, build 5, flat 3"/>
+        </insert>
+        <insert tableName="buyers">
+            <column name="surname" value="Petrov"/>
+            <column name="firstname" value="Petr"/>
+            <column name="lastname" value="Petrovich"/>
+            <column name="phone" value="89376531790"/>
+            <column name="address" value="Moscow, Begovaya street, build 4, flat 22"/>
+        </insert>
+        <insert tableName="buyers">
+            <column name="surname" value="Sidorov"/>
+            <column name="firstname" value="Ivan"/>
+            <column name="lastname" value="Petrovich"/>
+            <column name="phone" value="89084736798"/>
+            <column name="address" value="Penza, Suvorova street, build 37, flat 14"/>
+        </insert>
+        <insert tableName="buyers">
+            <column name="surname" value="Demina"/>
+            <column name="firstname" value="Svetlana"/>
+            <column name="lastname" value="Romanovna"/>
+            <column name="phone" value="89026798535"/>
+            <column name="address" value="Saratov, Moskovskaya street, build 21, flat 65"/>
+        </insert>
+        <insert tableName="buyers">
+            <column name="surname" value="Ermilova"/>
+            <column name="firstname" value="Alice"/>
+            <column name="lastname" value="Alexandrovna"/>
+            <column name="phone" value="89873291807"/>
+            <column name="address" value="Samara, Nagornaya street, build 187, flat 15"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

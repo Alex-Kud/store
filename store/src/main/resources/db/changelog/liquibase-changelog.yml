@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/create-products-and-buyers-schema.xml
+  - include:
+      file: db/changelog/insert-data-products.xml
+  - include:
+      file: db/changelog/insert-data-buyers.xml

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="02" author="alex">
+        <comment>Inserting Products</comment>
+        <insert tableName="products">
+            <column name="title" value="product_01"/>
+            <column name="length" valueNumeric="10"/>
+            <column name="width" valueNumeric="10"/>
+            <column name="height" valueNumeric="10"/>
+            <column name="weight" valueNumeric="10"/>
+            <column name="price" valueNumeric="10"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="product_02"/>
+            <column name="length" valueNumeric="20"/>
+            <column name="width" valueNumeric="20"/>
+            <column name="height" valueNumeric="20"/>
+            <column name="weight" valueNumeric="20"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="product_03"/>
+            <column name="length" valueNumeric="30"/>
+            <column name="width" valueNumeric="30"/>
+            <column name="height" valueNumeric="30"/>
+            <column name="weight" valueNumeric="30"/>
+            <column name="price" valueNumeric="30"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="product_04"/>
+            <column name="length" valueNumeric="40"/>
+            <column name="width" valueNumeric="40"/>
+            <column name="height" valueNumeric="40"/>
+            <column name="weight" valueNumeric="40"/>
+            <column name="price" valueNumeric="40"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="product_05"/>
+            <column name="length" valueNumeric="50"/>
+            <column name="width" valueNumeric="50"/>
+            <column name="height" valueNumeric="50"/>
+            <column name="weight" valueNumeric="50"/>
+            <column name="price" valueNumeric="50"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
