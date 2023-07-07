@@ -2,7 +2,6 @@ package com.practice.store.entity;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
-import java.text.DecimalFormat;
 
 @Entity
 @Table(name = "products")
@@ -10,7 +9,7 @@ public class ProductEntity implements Serializable {
 
     @Id
     @Column(name = "id", nullable = false, unique = true)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "title", nullable = false)
