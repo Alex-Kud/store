@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/changelog/insert-data-products.xml
   - include:
       file: db/changelog/insert-data-buyers.xml
+  - include:
+      file: db/changelog/create-orders-schema.xml
