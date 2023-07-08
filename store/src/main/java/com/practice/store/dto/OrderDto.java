@@ -2,20 +2,12 @@ package com.practice.store.dto;
 
 import java.util.Date;
 
+
 public class OrderDto {
-    private Integer id;
     private Integer buyerId;
     private Integer productId;
     private Integer quantity;
     private Date date;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Integer getBuyerId() {
         return buyerId;

@@ -24,12 +24,14 @@ public class OrderService implements IOrderService {
     private ProductDao productDao;
     @Autowired
     private BuyerDao buyerDao;
+    @Autowired
+    private OrderMapper orderMapper;
 
     @Override
     public OrderEntity create(OrderDto request) {
         if(productDao.findById(request.getProductId()).isPresent() &&
                 buyerDao.findById(request.getBuyerId()).isPresent()) {
-            OrderEntity order = OrderMapper.INSTANCE.toEntity(request);
+            OrderEntity order = orderMapper.toEntity(request);
             log.log(Level.INFO, "Заказ успешно создан");
             return orderDao.save(order);
         }

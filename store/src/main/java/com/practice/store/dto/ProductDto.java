@@ -1,21 +1,12 @@
 package com.practice.store.dto;
 
 public class ProductDto {
-    private Integer id;
     private String title;
     private Integer length;
     private Integer width;
     private Integer height;
     private Integer weight;
     private Float price;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

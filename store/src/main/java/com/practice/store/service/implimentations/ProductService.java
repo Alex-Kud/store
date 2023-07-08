@@ -17,6 +17,9 @@ public class ProductService implements IProductService {
     @Autowired
     private ProductDao productDao;
 
+    @Autowired
+    private ProductMapper productMapper;
+
     @Override
     public List<ProductEntity> getAll() {
         return productDao.findAllByOrderByIdAsc();
@@ -34,7 +37,7 @@ public class ProductService implements IProductService {
 
     @Override
     public ProductEntity create(ProductDto request) {
-        ProductEntity product = ProductMapper.INSTANCE.toEntity(request);
+        ProductEntity product = productMapper.toEntity(request);
 
         return productDao.save(product);
     }
@@ -44,7 +47,7 @@ public class ProductService implements IProductService {
         if (!productDao.existsById(id)) {
             throw new NotFoundProductException(id);
         }
-        ProductEntity product = ProductMapper.INSTANCE.toEntity(request);
+        ProductEntity product = productMapper.toEntity(request);
         product.setId(id);
 
         return productDao.save(product);

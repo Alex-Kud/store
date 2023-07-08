@@ -1,20 +1,12 @@
 package com.practice.store.dto;
 
+
 public class BuyerDto {
-    private Integer id;
     private String surname;
     private String firstname;
     private String lastname;
     private String phone;
     private String address;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getSurname() {
         return surname;

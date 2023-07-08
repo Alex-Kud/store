@@ -17,6 +17,9 @@ public class BuyerService implements IBuyerService {
     @Autowired
     private BuyerDao buyerDao;
 
+    @Autowired
+    private BuyerMapper buyerMapper;
+
     @Override
     public List<BuyerEntity> getAll() {
         return buyerDao.findAllByOrderByIdAsc();
@@ -34,7 +37,7 @@ public class BuyerService implements IBuyerService {
 
     @Override
     public BuyerEntity create(BuyerDto request) {
-        BuyerEntity buyer = BuyerMapper.INSTANCE.toEntity(request);
+        BuyerEntity buyer = buyerMapper.toEntity(request);
 
         return buyerDao.save(buyer);
     }
@@ -44,7 +47,7 @@ public class BuyerService implements IBuyerService {
         if (!buyerDao.existsById(id)) {
             throw new NotFoundBuyerException(id);
         }
-        BuyerEntity buyer = BuyerMapper.INSTANCE.toEntity(request);
+        BuyerEntity buyer = buyerMapper.toEntity(request);
         buyer.setId(id);
 
         return buyerDao.save(buyer);

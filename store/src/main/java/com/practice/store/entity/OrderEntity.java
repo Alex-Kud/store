@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+
 @Entity
 @Table(name = "orders")
 public class OrderEntity implements Serializable {

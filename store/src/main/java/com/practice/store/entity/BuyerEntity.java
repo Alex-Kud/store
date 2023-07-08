@@ -3,6 +3,7 @@ package com.practice.store.entity;
 import jakarta.persistence.*;
 import java.io.Serializable;
 
+
 @Entity
 @Table(name = "buyers")
 public class BuyerEntity implements Serializable {
