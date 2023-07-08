@@ -10,6 +10,8 @@ import com.practice.store.service.interfaces.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,6 +34,7 @@ public class OrderService implements IOrderService {
         if(productDao.findById(request.getProductId()).isPresent() &&
                 buyerDao.findById(request.getBuyerId()).isPresent()) {
             OrderEntity order = orderMapper.toEntity(request);
+            order.setDate(LocalDate.now());
             log.log(Level.INFO, "Заказ успешно создан");
             return orderDao.save(order);
         }

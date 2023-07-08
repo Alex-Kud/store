@@ -7,7 +7,6 @@ public class OrderDto {
     private Integer buyerId;
     private Integer productId;
     private Integer quantity;
-    private Date date;
 
     public Integer getBuyerId() {
         return buyerId;
@@ -31,13 +30,5 @@ public class OrderDto {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 }

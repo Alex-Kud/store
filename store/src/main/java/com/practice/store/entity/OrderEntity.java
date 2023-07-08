@@ -3,6 +3,7 @@ package com.practice.store.entity;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -26,7 +27,7 @@ public class OrderEntity implements Serializable {
     private Integer quantity;
 
     @Column(name = "date", nullable = false)
-    private Date date;
+    private LocalDate date;
 
     public Integer getId() {
         return id;
@@ -60,11 +61,11 @@ public class OrderEntity implements Serializable {
         this.quantity = quantity;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }
