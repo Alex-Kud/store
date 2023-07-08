@@ -1,5 +1,6 @@
 package com.practice.store.controller;
 
+import com.practice.store.dto.ProductDto;
 import com.practice.store.entity.ProductEntity;
 import com.practice.store.service.implimentations.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,12 @@ public class ProductController {
 
     @PostMapping("/products")
     @ResponseStatus(HttpStatus.CREATED)
-    public ProductEntity createProduct(@RequestBody ProductEntity request) {
+    public ProductEntity createProduct(@RequestBody ProductDto request) {
         return productService.create(request);
     }
 
-    @PutMapping("/products/{productIdId}")
-    public ProductEntity updateProduct(@PathVariable("productIdId") int id, @RequestBody ProductEntity request) {
+    @PutMapping("/products/{productId}")
+    public ProductEntity updateProduct(@PathVariable("productId") int id, @RequestBody ProductDto request) {
         return productService.update(id, request);
     }
 

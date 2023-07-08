@@ -1,5 +1,6 @@
 package com.practice.store.controller;
 
+import com.practice.store.dto.BuyerDto;
 import com.practice.store.entity.BuyerEntity;
 import com.practice.store.service.implimentations.BuyerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +28,12 @@ public class BuyerController {
 
     @PostMapping("/buyers")
     @ResponseStatus(HttpStatus.CREATED)
-    public BuyerEntity createBuyer(@RequestBody BuyerEntity request) {
+    public BuyerEntity createBuyer(@RequestBody BuyerDto request) {
         return buyerService.create(request);
     }
 
     @PutMapping("/buyers/{buyerId}")
-    public BuyerEntity updateBuyer(@PathVariable("buyerId") int id, @RequestBody BuyerEntity request) {
+    public BuyerEntity updateBuyer(@PathVariable("buyerId") int id, @RequestBody BuyerDto request) {
         return buyerService.update(id, request);
     }
 

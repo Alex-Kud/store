@@ -1,8 +1,10 @@
 package com.practice.store.service.implimentations;
 
 import com.practice.store.dao.ProductDao;
+import com.practice.store.dto.ProductDto;
 import com.practice.store.entity.ProductEntity;
 import com.practice.store.exception.NotFoundProductException;
+import com.practice.store.mapper.ProductMapper;
 import com.practice.store.service.interfaces.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,18 +33,18 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public ProductEntity create(ProductEntity request) {
-        ProductEntity product = getProductEntity(request);
-        System.out.println(product.toString());
+    public ProductEntity create(ProductDto request) {
+        ProductEntity product = ProductMapper.INSTANCE.toEntity(request);
+
         return productDao.save(product);
     }
 
     @Override
-    public ProductEntity update(int id, ProductEntity request) {
+    public ProductEntity update(int id, ProductDto request) {
         if (!productDao.existsById(id)) {
             throw new NotFoundProductException(id);
         }
-        ProductEntity product = getProductEntity(request);
+        ProductEntity product = ProductMapper.INSTANCE.toEntity(request);
         product.setId(id);
 
         return productDao.save(product);
@@ -57,17 +59,5 @@ public class ProductService implements IProductService {
         ProductEntity product = productDao.findById(id);
 
         productDao.delete(product);
-    }
-
-    private ProductEntity getProductEntity(ProductEntity request) {
-        ProductEntity product = new ProductEntity();
-        product.setTitle(request.getTitle());
-        product.setLength(request.getLength());
-        product.setWidth(request.getWidth());
-        product.setHeight(request.getHeight());
-        product.setWeight(request.getWeight());
-        product.setPrice(request.getPrice());
-
-        return product;
     }
 }

@@ -1,5 +1,6 @@
 package com.practice.store.service.interfaces;
 
+import com.practice.store.dto.BuyerDto;
 import com.practice.store.entity.BuyerEntity;
 import java.util.List;
 
@@ -9,9 +10,9 @@ public interface IBuyerService {
 
     BuyerEntity getById(int id);
 
-    BuyerEntity create(BuyerEntity request);
+    BuyerEntity create(BuyerDto request);
 
-    BuyerEntity update(int id, BuyerEntity request);
+    BuyerEntity update(int id, BuyerDto request);
 
     void delete(int id);
 }
