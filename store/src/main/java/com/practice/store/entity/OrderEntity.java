@@ -1,12 +1,13 @@
 package com.practice.store.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
-
+@Data
 @Entity
 @Table(name = "orders")
 public class OrderEntity implements Serializable {
@@ -28,44 +29,4 @@ public class OrderEntity implements Serializable {
 
     @Column(name = "date", nullable = false)
     private LocalDate date;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public BuyerEntity getBuyer() {
-        return buyer;
-    }
-
-    public void setBuyer(BuyerEntity buyer) {
-        this.buyer = buyer;
-    }
-
-    public ProductEntity getProduct() {
-        return product;
-    }
-
-    public void setProduct(ProductEntity product) {
-        this.product = product;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
 }
