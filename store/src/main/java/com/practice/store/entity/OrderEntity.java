@@ -12,21 +12,20 @@ import java.util.Date;
 @Table(name = "orders")
 public class OrderEntity implements Serializable {
     @Id
-    @Column(name = "id", nullable = false, unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "buyer")
     private BuyerEntity buyer;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "product")
     private ProductEntity product;
 
-    @Column(name = "quantity", nullable = false)
+    @Column(nullable = false)
     private Integer quantity;
 
-    @Column(name = "date", nullable = false)
+    @Column(nullable = false)
     private LocalDate date;
 }
